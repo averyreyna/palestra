@@ -1,0 +1,55 @@
+.project-selector {
+  background: #2d2d30;
+  color: #cccccc;
+  border-bottom: 1px solid #333;
+  padding: 16px;
+}
+
+.selector-header {
+  margin-bottom: 16px;
+}
+
+.selector-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #cccccc;
+}
+
+.project-list {
+  display: flex;
+  gap: 12px;
+}
+
+.project-item {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.project-item:hover {
+  background: #252526;
+  border-color: #007acc;
+}
+
+.project-item.selected {
+  background: #094771;
+  border-color: #007acc;
+}
+
+.project-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.project-description {
+  font-size: 12px;
+  color: #cccccc;
+  line-height: 1.4;
+}

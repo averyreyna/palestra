@@ -1,0 +1,130 @@
+.code-editor {
+  flex: 1;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+}
+
+.editor-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #1e1e1e;
+}
+
+.placeholder-content {
+  text-align: center;
+  color: #858585;
+}
+
+.placeholder-content h2 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.placeholder-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.editor-header {
+  background: #2d2d30;
+  border-bottom: 1px solid #333;
+  padding: 0;
+  min-height: 35px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: #1e1e1e;
+  border-right: 1px solid #333;
+  border-top: 2px solid #007acc;
+  font-size: 13px;
+  color: #ffffff;
+  min-width: 120px;
+}
+
+.tab-icon {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.tab-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editor-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.line-numbers {
+  background: #1e1e1e;
+  color: #858585;
+  padding: 16px 8px;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
+  border-right: 1px solid #333;
+  user-select: none;
+  min-width: 50px;
+}
+
+.line-number {
+  height: 18px;
+  padding-right: 8px;
+}
+
+.code-content {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+.code-content pre {
+  margin: 0;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.code-content code {
+  font-family: inherit;
+  background: none;
+  padding: 0;
+}
+
+.code-line {
+  height: 18px;
+  white-space: pre;
+  color: #d4d4d4;
+}
+
+/* Basic syntax highlighting colors */
+.code-content .keyword {
+  color: #569cd6;
+}
+
+.code-content .string {
+  color: #ce9178;
+}
+
+.code-content .comment {
+  color: #6a9955;
+}
+
+.code-content .number {
+  color: #b5cea8;
+}
