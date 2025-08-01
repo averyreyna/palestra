@@ -13,9 +13,12 @@ export interface MockCodebase {
 }
 
 export interface CodeQuestion {
-  id: string;
+  id: number;
   question: string;
-  context: string;
+  category: 'architecture' | 'functionality' | 'best-practices' | 'edge-cases' | 'testing';
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  relatedFiles: string[];
+  context?: string;
   expectedAnswer?: string;
 }
 
