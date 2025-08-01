@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .chat-header {
@@ -34,6 +34,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-family: 'ABC Diatype', 'Inter', sans-serif;
 }
 
 .new-question-btn:hover {
@@ -145,7 +146,7 @@
   border-radius: 8px;
   padding: 12px;
   font-size: 14px;
-  font-family: inherit;
+  font-family: 'ABC Diatype', 'Inter', sans-serif;
   resize: vertical;
   min-height: 60px;
   outline: none;
@@ -168,6 +169,7 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
   align-self: flex-end;
+  font-family: 'ABC Diatype', 'Inter', sans-serif;
 }
 
 .chat-input button:hover:not(:disabled) {

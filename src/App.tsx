@@ -5,6 +5,7 @@ import FileExplorer from './components/FileExplorer';
 import CodeEditor from './components/CodeEditor';
 import ChatInterface from './components/ChatInterface';
 import ProjectSelector from './components/ProjectSelector';
+import ExperimentInfo from './components/ExperimentInfo';
 import { mockCodebases, codeQuestions } from './data/mockCodebases';
 import { FileNode, MockCodebase, CodeQuestion } from './types';
 import './App.css';
@@ -81,6 +82,9 @@ function App() {
           onAnswerSubmit={handleAnswerSubmit}
           onNewQuestion={handleNewQuestion}
         />
+      </div>
+      <div className="experiment-info-container">
+        <ExperimentInfo />
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({
   return (
     <div className="project-selector">
       <div className="selector-header">
-        <h3>AI Generated Projects</h3>
+        <div className="prototype-name">Palestra</div>
       </div>
       <div className="project-list">
         {codebases.map((codebase, index) => (

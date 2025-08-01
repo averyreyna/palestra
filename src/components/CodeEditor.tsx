@@ -30,8 +30,8 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ selectedFile }) => {
       <div className="code-editor">
         <div className="editor-placeholder">
           <div className="placeholder-content">
-            <h2>Welcome to AI IDE Prototype</h2>
-            <p>Select a file from the explorer to view its contents</p>
+            <h2>Welcome to Palestra</h2>
+            <p>Go ahead and look around the codebases</p>
           </div>
         </div>
       </div>
