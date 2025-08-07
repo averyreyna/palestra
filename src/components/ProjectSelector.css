@@ -7,6 +7,9 @@
 
 .selector-header {
   margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .prototype-name {
@@ -61,4 +64,44 @@
   font-size: 12px;
   color: #cccccc;
   line-height: 1.4;
+}
+
+.generate-btn {
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.generate-btn:hover {
+  background: #005a9e;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 60px;
+  padding: 0;
+}
+
+.generate-btn-centered {
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.generate-btn-centered:hover {
+  background: #005a9e;
 }

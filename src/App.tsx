@@ -6,15 +6,18 @@ import CodeEditor from './components/CodeEditor';
 import ChatInterface from './components/ChatInterface';
 import ProjectSelector from './components/ProjectSelector';
 import ExperimentInfo from './components/ExperimentInfo';
-import { mockCodebases, codeQuestions } from './data/mockCodebases';
+import { CodebaseGenerator } from './components/CodebaseGenerator';
+import { mockCodebases, codeQuestions, addGeneratedCodebase } from './data/mockCodebases';
 import { FileNode, MockCodebase, CodeQuestion } from './types';
 import './App.css';
 
 function App() {
-  const [selectedCodebase, setSelectedCodebase] = useState<MockCodebase | null>(mockCodebases[0]);
+  const [codebases, setCodebases] = useState<MockCodebase[]>(mockCodebases);
+  const [selectedCodebase, setSelectedCodebase] = useState<MockCodebase | null>(mockCodebases[0] || null);
   const [selectedFile, setSelectedFile] = useState<FileNode | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<CodeQuestion | null>(null);
   const [files, setFiles] = useState<FileNode[]>(mockCodebases[0]?.files || []);
+  const [showGenerator, setShowGenerator] = useState(false);
 
   const handleCodebaseSelect = (codebase: MockCodebase) => {
     setSelectedCodebase(codebase);
@@ -47,7 +50,7 @@ function App() {
     const availableQuestions = codeQuestions.filter(q => {
       if (!selectedCodebase) return true;
       // Simple matching based on codebase name
-      return q.context.toLowerCase().includes(selectedCodebase.name.toLowerCase().split(' ')[0]);
+      return q.context?.toLowerCase().includes(selectedCodebase.name.toLowerCase().split(' ')[0]) || false;
     });
     
     const randomQuestion = availableQuestions.length > 0 
@@ -62,12 +65,44 @@ function App() {
     // Here you could implement answer validation, scoring, etc.
   };
 
+  const handleCodebaseGenerated = (newCodebase: MockCodebase) => {
+    addGeneratedCodebase(newCodebase);
+    setCodebases([...codebases, newCodebase]);
+    setSelectedCodebase(newCodebase);
+    setFiles(newCodebase.files);
+    setSelectedFile(null);
+    setCurrentQuestion(null);
+    setShowGenerator(false);
+  };
+
+  const handleShowGenerator = () => {
+    setShowGenerator(true);
+  };
+
+  const handleBackToProjects = () => {
+    setShowGenerator(false);
+  };
+
+  if (showGenerator) {
+    return (
+      <div className="App">
+        <div className="generator-header">
+          <button className="back-btn" onClick={handleBackToProjects}>
+            ← Back to Projects
+          </button>
+        </div>
+        <CodebaseGenerator onCodebaseGenerated={handleCodebaseGenerated} />
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <ProjectSelector 
-        codebases={mockCodebases}
+        codebases={codebases}
         selectedCodebase={selectedCodebase}
         onCodebaseSelect={handleCodebaseSelect}
+        onShowGenerator={handleShowGenerator}
       />
       <div className="main-content">
         <FileExplorer 
