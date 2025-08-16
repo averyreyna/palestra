@@ -86,10 +86,13 @@ function App() {
   if (showGenerator) {
     return (
       <div className="App">
-        <div className="generator-header">
-          <button className="back-btn" onClick={handleBackToProjects}>
-            ← Back to Projects
-          </button>
+        <div className="project-selector">
+          <div className="selector-header">
+            <div className="prototype-name">Palestra</div>
+            <button className="back-btn" onClick={handleBackToProjects}>
+              ← Back to Projects
+            </button>
+          </div>
         </div>
         <CodebaseGenerator onCodebaseGenerated={handleCodebaseGenerated} />
       </div>
@@ -102,7 +105,6 @@ function App() {
         codebases={codebases}
         selectedCodebase={selectedCodebase}
         onCodebaseSelect={handleCodebaseSelect}
-        onShowGenerator={handleShowGenerator}
       />
       <div className="main-content">
         <FileExplorer 
@@ -110,6 +112,7 @@ function App() {
           selectedFile={selectedFile?.name || null}
           onFileSelect={handleFileSelect}
           onFolderToggle={handleFolderToggle}
+          onShowGenerator={handleShowGenerator}
         />
         <CodeEditor selectedFile={selectedFile} />
         <ChatInterface 

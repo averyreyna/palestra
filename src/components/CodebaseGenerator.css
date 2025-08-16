@@ -1,42 +1,32 @@
 .codebase-generator {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 24px 0;
+  background: #f5f5f5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.generator-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.generator-header h2 {
-  color: #1a1a1a;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.generator-header p {
-  color: #666;
-  font-size: 14px;
-}
 
 .generator-content {
+  flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 0;
+  overflow: hidden;
 }
 
 .form-section {
-  padding-right: 16px;
-  border-right: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-right: 1px solid #d1d1d1;
+  padding: 24px;
+  overflow-y: auto;
 }
 
 .form-section h3 {
-  color: #1a1a1a;
+  color: #2b2b2b;
   margin-bottom: 20px;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .form-group {
@@ -46,28 +36,30 @@
 .form-group label {
   display: block;
   margin-bottom: 6px;
-  color: #374151;
+  color: #2b2b2b;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   transition: border-color 0.2s ease;
+  background: #ffffff;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #007acc;
+  box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.1);
 }
 
 .form-row {
@@ -78,14 +70,18 @@
 
 .checkbox-label {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 24px;
   cursor: pointer;
   font-weight: normal;
+  padding: 12px 0;
+  line-height: 1.5;
 }
 
 .checkbox-label input[type="checkbox"] {
   width: auto;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .feature-input {
@@ -114,18 +110,21 @@
 }
 
 .add-feature {
-  background: #f3f4f6;
-  color: #374151;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  padding: 8px 16px;
-  font-size: 14px;
+  background: #f8f8f8;
+  color: #2b2b2b;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .add-feature:hover {
-  background: #e5e7eb;
+  background: #e8f4fd;
+  border-color: #007acc;
 }
 
 .form-actions {
@@ -133,20 +132,21 @@
 }
 
 .generate-btn {
-  background: #3b82f6;
+  background: #007acc;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   width: 100%;
   transition: background-color 0.2s ease;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .generate-btn:hover:not(:disabled) {
-  background: #2563eb;
+  background: #005a9e;
 }
 
 .generate-btn:disabled {
@@ -155,7 +155,9 @@
 }
 
 .ideas-section {
-  padding-left: 16px;
+  background: #f8f8f8;
+  padding: 24px;
+  overflow-y: auto;
 }
 
 .ideas-header {
@@ -166,8 +168,9 @@
 }
 
 .ideas-header h3 {
-  color: #1a1a1a;
+  color: #2b2b2b;
   font-size: 18px;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -175,11 +178,15 @@
   background: #10b981;
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  font-size: 14px;
+  border-radius: 2px;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .load-ideas-btn:hover:not(:disabled) {
@@ -299,18 +306,16 @@
 @media (max-width: 768px) {
   .generator-content {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 0;
   }
   
   .form-section {
-    padding-right: 0;
     border-right: none;
+    border-bottom: 1px solid #d1d1d1;
   }
   
   .ideas-section {
-    padding-left: 0;
-    border-top: 1px solid #e5e7eb;
-    padding-top: 24px;
+    border-top: 1px solid #d1d1d1;
   }
   
   .form-row {

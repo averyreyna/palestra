@@ -8,9 +8,13 @@
 }
 
 .explorer-header {
-  padding: 12px 16px;
+  padding: 12px 12px;
   border-bottom: 1px solid #d1d1d1;
   background: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
 .explorer-header h3 {
@@ -66,4 +70,35 @@
 .folder-children {
   /* Children are handled by the recursive rendering with increased padding */
   display: block;
+}
+
+.file-explorer .explorer-header .generate-btn {
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: auto;
+  width: auto;
+}
+
+.file-explorer .explorer-header .generate-btn:hover {
+  background: #005a9e;
+}
+
+.empty-files-message {
+  padding: 16px 12px;
+  font-size: 12px;
+  color: #666666;
+  text-align: center;
+  line-height: 1.4;
+  font-style: italic;
 }

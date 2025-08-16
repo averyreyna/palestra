@@ -7,13 +7,15 @@ interface FileExplorerProps {
   selectedFile: string | null;
   onFileSelect: (file: FileNode) => void;
   onFolderToggle: (folderName: string) => void;
+  onShowGenerator: () => void;
 }
 
 const FileExplorer: React.FC<FileExplorerProps> = ({
   files,
   selectedFile,
   onFileSelect,
-  onFolderToggle
+  onFolderToggle,
+  onShowGenerator
 }) => {
   const renderFileNode = (node: FileNode, depth: number = 0) => {
     const isSelected = selectedFile === node.name;
@@ -49,9 +51,18 @@ const FileExplorer: React.FC<FileExplorerProps> = ({
     <div className="file-explorer">
       <div className="explorer-header">
         <h3>Explorer</h3>
+        <button className="generate-btn" onClick={onShowGenerator}>
+          + Generate New
+        </button>
       </div>
       <div className="file-tree">
-        {files.map(file => renderFileNode(file))}
+        {files.length === 0 ? (
+          <div className="empty-files-message">
+            No projects available. Click "Generate New" to create a project.
+          </div>
+        ) : (
+          files.map(file => renderFileNode(file))
+        )}
       </div>
     </div>
   );

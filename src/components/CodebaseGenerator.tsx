@@ -110,11 +110,6 @@ export const CodebaseGenerator: React.FC<CodebaseGeneratorProps> = ({ onCodebase
 
   return (
     <div className="codebase-generator">
-      <div className="generator-header">
-        <h2>Generate Codebase with Claude</h2>
-        <p>Create enterprise-quality codebases using AI</p>
-      </div>
-
       <div className="generator-content">
         <div className="form-section">
           <h3>Project Details</h3>

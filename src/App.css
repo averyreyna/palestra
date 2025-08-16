@@ -66,7 +66,6 @@
 .main-content {
   flex: 1;
   display: flex;
-  height: calc(100vh - 80px); /* Adjust based on ProjectSelector height */
   overflow: hidden;
 }
 
@@ -96,11 +95,6 @@ code {
   z-index: 100;
 }
 
-.generator-header {
-  background: #f8f8f8;
-  border-bottom: 1px solid #d1d1d1;
-  padding: 16px;
-}
 
 .back-btn {
   background: #ffffff;
@@ -112,6 +106,7 @@ code {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .back-btn:hover {
