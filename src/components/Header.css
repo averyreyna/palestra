@@ -1,0 +1,48 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e1e1e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2b2b2b;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.back-btn {
+  background: #ffffff;
+  color: #2b2b2b;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.back-btn:hover {
+  background: #f0f8ff;
+  border-color: #007acc;
+}

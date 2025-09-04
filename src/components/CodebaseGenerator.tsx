@@ -164,14 +164,16 @@ export const CodebaseGenerator: React.FC<CodebaseGeneratorProps> = ({ onCodebase
 
           <div className="form-group">
             <label>Include Backend</label>
-            <label className="checkbox-label">
-              <input
-                type="checkbox"
-                checked={formData.includeBackend}
-                onChange={(e) => handleInputChange('includeBackend', e.target.checked)}
-              />
-              Generate backend API along with frontend
-            </label>
+            <div className="checkbox-container">
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={formData.includeBackend}
+                  onChange={(e) => handleInputChange('includeBackend', e.target.checked)}
+                />
+                <div className="checkbox-text">Generate backend API along with frontend</div>
+              </label>
+            </div>
           </div>
 
           <div className="form-group">

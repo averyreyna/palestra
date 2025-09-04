@@ -15,11 +15,13 @@ export interface MockCodebase {
 export interface CodeQuestion {
   id: number;
   question: string;
-  category: 'architecture' | 'functionality' | 'best-practices' | 'edge-cases' | 'testing';
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
-  relatedFiles: string[];
+  options: string[];
+  correctAnswer: number;
+  explanation: string;
+  category?: 'architecture' | 'functionality' | 'best-practices' | 'edge-cases' | 'testing';
+  difficulty?: 'beginner' | 'intermediate' | 'advanced';
+  relatedFiles?: string[];
   context?: string;
-  expectedAnswer?: string;
 }
 
 export interface ChatMessage {

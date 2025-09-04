@@ -4,7 +4,8 @@ import '@fontsource/inter';
 import FileExplorer from './components/FileExplorer';
 import CodeEditor from './components/CodeEditor';
 import ChatInterface from './components/ChatInterface';
-import ProjectSelector from './components/ProjectSelector';
+import Header from './components/Header';
+import ProjectDropdown from './components/ProjectDropdown';
 import ExperimentInfo from './components/ExperimentInfo';
 import { CodebaseGenerator } from './components/CodebaseGenerator';
 import { mockCodebases, codeQuestions, addGeneratedCodebase } from './data/mockCodebases';
@@ -86,14 +87,11 @@ function App() {
   if (showGenerator) {
     return (
       <div className="App">
-        <div className="project-selector">
-          <div className="selector-header">
-            <div className="prototype-name">Palestra</div>
-            <button className="back-btn" onClick={handleBackToProjects}>
-              ← Back to Projects
-            </button>
-          </div>
-        </div>
+        <Header 
+          title="Palestra"
+          showBackButton={true}
+          onBackClick={handleBackToProjects}
+        />
         <CodebaseGenerator onCodebaseGenerated={handleCodebaseGenerated} />
       </div>
     );
@@ -101,11 +99,13 @@ function App() {
 
   return (
     <div className="App">
-      <ProjectSelector 
-        codebases={codebases}
-        selectedCodebase={selectedCodebase}
-        onCodebaseSelect={handleCodebaseSelect}
-      />
+      <Header title="Palestra">
+        <ProjectDropdown 
+          codebases={codebases}
+          selectedCodebase={selectedCodebase}
+          onCodebaseSelect={handleCodebaseSelect}
+        />
+      </Header>
       <div className="main-content">
         <FileExplorer 
           files={files}

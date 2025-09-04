@@ -1,0 +1,93 @@
+.project-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-width: 200px;
+}
+
+.dropdown-trigger:hover {
+  border-color: #007acc;
+  background: #f9f9f9;
+}
+
+.project-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.selected-project {
+  color: #2b2b2b;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-arrow {
+  color: #666;
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background: #f0f8ff;
+}
+
+.dropdown-item.selected {
+  background: #e6f3ff;
+  border-left: 3px solid #007acc;
+}
+
+.dropdown-project-name {
+  font-weight: 500;
+  color: #2b2b2b;
+  margin-bottom: 4px;
+}
+
+.dropdown-project-description {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}

@@ -96,20 +96,4 @@ code {
 }
 
 
-.back-btn {
-  background: #ffffff;
-  color: #2b2b2b;
-  border: 1px solid #d1d1d1;
-  border-radius: 6px;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: 'ABC Diatype', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.back-btn:hover {
-  background: #f0f8ff;
-  border-color: #007acc;
-}
+/* Removed .back-btn styles - now handled in Header.css */

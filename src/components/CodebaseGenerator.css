@@ -68,20 +68,34 @@
   gap: 16px;
 }
 
+.checkbox-container {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
 .checkbox-label {
   display: flex;
-  align-items: flex-start;
-  gap: 24px;
+  align-items: center;
   cursor: pointer;
   font-weight: normal;
-  padding: 12px 0;
   line-height: 1.5;
+  gap: 0;
 }
 
 .checkbox-label input[type="checkbox"] {
-  width: auto;
-  margin-top: 2px;
-  flex-shrink: 0;
+  margin: 0 12px 0 0;
+  transform: scale(1.2);
+  accent-color: #007acc;
+}
+
+.checkbox-text {
+  flex: 1;
+  font-size: 14px;
+  color: #495057;
+  margin-top: 1px;
 }
 
 .feature-input {
